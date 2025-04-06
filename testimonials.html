@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Read what users and organizations say about RecoverThisFile's miraculous data recovery technology">
+    <meta name="keywords" content="recovery testimonials, user stories, data recovery success, file restoration">
+    <title>Testimonials | RecoverThisFile</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .testimonial-hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-dark));
+            color: white;
+            border-radius: var(--border-radius);
+            padding: 3rem 2rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--box-shadow-lg);
+        }
+        
+        .testimonial-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        
+        .testimonial-hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: var(--font-weight-bold);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .testimonial-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--box-shadow-lg);
+        }
+        
+        .testimonial-header {
+            background: linear-gradient(to right, rgba(0, 120, 231, 0.05), rgba(0, 200, 83, 0.05));
+            padding: 1.5rem;
+            position: relative;
+        }
+        
+        .testimonial-header::before {
+            content: '"';
+            position: absolute;
+            top: 0.5rem;
+            left: 1rem;
+            font-size: 4rem;
+            color: var(--primary-color);
+            opacity: 0.1;
+            font-family: serif;
+        }
+        
+        .testimonial-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+        }
+        
+        .testimonial-quote {
+            font-style: italic;
+            color: var(--gray-700);
+            margin-bottom: 1.5rem;
+            position: relative;
+            line-height: 1.6;
+        }
+        
+        .testimonial-details {
+            display: flex;
+            align-items: center;
+            margin-top: auto;
+        }
+        
+        .testimonial-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--primary-gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: var(--font-weight-bold);
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+        
+        .testimonial-person h4 {
+            margin: 0;
+            font-size: 1rem;
+            color: var(--gray-800);
+        }
+        
+        .testimonial-person p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        
+        .testimonial-rating {
+            color: var(--accent-color);
+            margin-top: 0.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .case-studies {
+            margin: 4rem 0;
+        }
+        
+        .case-study {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            margin-bottom: 2rem;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+        
+        .case-study:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--box-shadow-lg);
+        }
+        
+        .case-study-header {
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: white;
+        }
+        
+        .case-study-header h3 {
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+        }
+        
+        .case-study-content {
+            padding: 2rem;
+        }
+        
+        .case-study-content p:last-child {
+            margin-bottom: 0;
+        }
+        
+        .case-study-meta {
+            display: flex;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background-color: var(--gray-100);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            color: var(--gray-700);
+        }
+        
+        .meta-icon {
+            color: var(--primary-color);
+        }
+        
+        .success-metric {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        
+        .metric {
+            text-align: center;
+            padding: 1rem 2rem;
+            background-color: var(--gray-100);
+            border-radius: var(--border-radius);
+            min-width: 150px;
+        }
+        
+        .metric-value {
+            font-size: 2rem;
+            font-weight: var(--font-weight-bold);
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .metric-label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        
+        .star-rating {
+            color: gold;
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <a href="index.html" class="logo-link">
+                    <div class="logo-3d-container">
+                        <div class="logo-3d">
+                            <div class="logo-face logo-front"></div>
+                            <div class="logo-face logo-back"></div>
+                            <div class="logo-face logo-right"></div>
+                            <div class="logo-face logo-left"></div>
+                            <div class="logo-face logo-top"></div>
+                            <div class="logo-face logo-bottom"></div>
+                        </div>
+                    </div>
+                    <div class="brand-text">
+                        <h1>RecoverThisFile<span class="tld">.com</span></h1>
+                        <p class="tagline">Enterprise-Grade Digital Resurrection Solution</p>
+                    </div>
+                </a>
+                <div class="header-badges">
+                    <div class="security-badge">
+                        <div class="badge-content">
+                            <span class="badge-icon">🔄</span>
+                            <span>CERTIFIED RECOVERY</span>
+                        </div>
+                    </div>
+                    <div class="security-badge enterprise">
+                        <div class="badge-content">
+                            <span class="badge-icon">⚙️</span>
+                            <span>ENTERPRISE READY</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Recover</a></li>
+                    <li><a href="how-it-works.html">How It Works</a></li>
+                    <li><a href="enterprise-solutions.html">Enterprise</a></li>
+                    <li><a href="comparison.html">Comparison</a></li>
+                    <li><a href="testimonials.html" class="active">Testimonials</a></li>
+                    <li><a href="team.html">Our Team</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="page-hero">
+            <h2>Success Stories</h2>
+            <p>Discover how RecoverThisFile has saved critical data for thousands of individuals and organizations worldwide, even when all hope seemed lost.</p>
+        </div>
+        
+        <h3>What Our Users Are Saying</h3>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <div class="star-rating">★★★★★</div>
+                </div>
+                <div class="testimonial-content">
+                    <div class="testimonial-quote">
+                        I accidentally deleted my wedding photos after formatting my SD card. Three other recovery tools failed completely. RecoverThisFile brought back every single image in perfect condition! It's like digital magic.
+                    </div>
+                    <div class="testimonial-details">
+                        <div class="testimonial-avatar">SJ</div>
+                        <div class="testimonial-person">
+                            <h4>Sarah Johnson</h4>
+                            <p>Photographer, New York</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <div class="star-rating">★★★★★</div>
+                </div>
+                <div class="testimonial-content">
+                    <div class="testimonial-quote">
+                        Our client's finance department accidentally deleted 3 years of tax records. They had even used DeleteThisFile's "military-grade" wiping on some documents. RecoverThisFile recovered 99% of the data. Absolutely saved our business relationship.
+                    </div>
+                    <div class="testimonial-details">
+                        <div class="testimonial-avatar">MM</div>
+                        <div class="testimonial-person">
+                            <h4>Marcus Mitchell</h4>
+                            <p>IT Director, Fortune 500 Company</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <div class="star-rating">★★★★★</div>
+                </div>
+                <div class="testimonial-content">
+                    <div class="testimonial-quote">
+                        My hard drive crashed right before a major presentation. The manufacturer said the data was irrecoverable. I tried RecoverThisFile as a last resort, and within hours I had all my presentation files back. This saved my career!
+                    </div>
+                    <div class="testimonial-details">
+                        <div class="testimonial-avatar">DP</div>
+                        <div class="testimonial-person">
+                            <h4>Dr. Patricia Lee</h4>
+                            <p>Research Scientist, Boston</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <div class="star-rating">★★★★★</div>
+                </div>
+                <div class="testimonial-content">
+                    <div class="testimonial-quote">
+                        My son accidentally deleted his entire thesis just days before submission. The university IT department couldn't help. RecoverThisFile recovered the document with all formatting intact. Worth every penny of the Enterprise subscription.
+                    </div>
+                    <div class="testimonial-details">
+                        <div class="testimonial-avatar">JT</div>
+                        <div class="testimonial-person">
+                            <h4>James Thompson</h4>
+                            <p>University Professor, London</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <div class="star-rating">★★★★★</div>
+                </div>
+                <div class="testimonial-content">
+                    <div class="testimonial-quote">
+                        We had a ransomware attack that encrypted and deleted critical patient data. Our cybersecurity team was pessimistic, but RecoverThisFile's enterprise solution recovered over 98% of the affected files. Truly miraculous technology.
+                    </div>
+                    <div class="testimonial-details">
+                        <div class="testimonial-avatar">AR</div>
+                        <div class="testimonial-person">
+                            <h4>Dr. Aisha Rahman</h4>
+                            <p>Hospital CTO, Chicago</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <div class="star-rating">★★★★★</div>
+                </div>
+                <div class="testimonial-content">
+                    <div class="testimonial-quote">
+                        After our developers accidentally dropped a production database, we thought we were doomed. Backups were corrupted, and the data was gone. RecoverThisFile's Quantum Recovery Array recovered the entire database structure and 99.7% of the records.
+                    </div>
+                    <div class="testimonial-details">
+                        <div class="testimonial-avatar">RK</div>
+                        <div class="testimonial-person">
+                            <h4>Ryan Kumar</h4>
+                            <p>CIO, Tech Startup</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <section class="case-studies">
+            <h3>Featured Case Studies</h3>
+            
+            <div class="case-study">
+                <div class="case-study-header">
+                    <h3>Global Financial Institution Data Recovery</h3>
+                </div>
+                <div class="case-study-content">
+                    <div class="case-study-meta">
+                        <div class="meta-item">
+                            <span class="meta-icon">🏢</span>
+                            <span>Enterprise Client</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-icon">📊</span>
+                            <span>17TB Data</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-icon">⏱️</span>
+                            <span>72-Hour Recovery</span>
+                        </div>
+                    </div>
+                    
+                    <p>One of the world's largest financial institutions experienced a catastrophic storage system failure affecting 17TB of mission-critical transaction data. After their primary backup system failed, they turned to RecoverThisFile's Enterprise Solution.</p>
+                    
+                    <p>Our team deployed an on-premise Quantum Recovery Array™ and initiated a comprehensive molecular scan of their damaged storage systems. Despite the severity of the data corruption, our proprietary reconstruction algorithms were able to rebuild the file structures and recover the transaction history.</p>
+                    
+                    <div class="success-metric">
+                        <div class="metric">
+                            <div class="metric-value">99.97%</div>
+                            <div class="metric-label">Data Recovery Rate</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">72hrs</div>
+                            <div class="metric-label">Recovery Time</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">$42M</div>
+                            <div class="metric-label">Estimated Savings</div>
+                        </div>
+                    </div>
+                    
+                    <p>"RecoverThisFile accomplished what our internal teams and two other recovery services deemed impossible. The speed and accuracy of the recovery saved us tens of millions in potential losses and regulatory penalties." - Anonymous Financial Institution CIO</p>
+                </div>
+            </div>
+            
+            <div class="case-study">
+                <div class="case-study-header">
+                    <h3>Hollywood Studio Post-Production Recovery</h3>
+                </div>
+                <div class="case-study-content">
+                    <div class="case-study-meta">
+                        <div class="meta-item">
+                            <span class="meta-icon">🎬</span>
+                            <span>Media & Entertainment</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-icon">📊</span>
+                            <span>8.5TB Video Files</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-icon">⏱️</span>
+                            <span>48-Hour Recovery</span>
+                        </div>
+                    </div>
+                    
+                    <p>A major Hollywood studio faced disaster when a system malfunction during post-production resulted in the deletion of over 8.5TB of edited footage for an upcoming blockbuster film. With release deadlines approaching, they needed an emergency solution.</p>
+                    
+                    <p>RecoverThisFile's Premier Enterprise solution was deployed within hours. Our advanced reconstruction algorithms specifically optimized for large media files were able to rebuild the complex project structures, recover the raw footage, and restore the editing timelines intact.</p>
+                    
+                    <div class="success-metric">
+                        <div class="metric">
+                            <div class="metric-value">99.8%</div>
+                            <div class="metric-label">Data Recovery Rate</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">48hrs</div>
+                            <div class="metric-label">Recovery Time</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">$15M</div>
+                            <div class="metric-label">Production Costs Saved</div>
+                        </div>
+                    </div>
+                    
+                    <p>"What seemed like a catastrophic loss was resolved in just two days. The film released on schedule with all our post-production work intact. RecoverThisFile's speed and thoroughness saved the production." - Executive Producer</p>
+                </div>
+            </div>
+        </section>
+        
+        <div class="callout-box">
+            <h3>Ready to Recover Your Critical Data?</h3>
+            <p>Our quantum reconstruction technology can resurrect files that others claim are gone forever.</p>
+            <div class="btn-container">
+                <a href="index.html" class="btn-primary">Recover Files Now <span>→</span></a>
+                <a href="enterprise-solutions.html" class="btn-secondary">Enterprise Solutions</a>
+            </div>
+        </div>
+
+        <footer>
+            <!-- Footer content will be injected by footer.js -->
+        </footer>
+    </div>
+
+    <!-- Theme toggle button -->
+    <button id="theme-switch" aria-label="Toggle dark/light mode">🌓</button>
+
+    <script src="js/theme.js"></script>
+    <script src="js/footer.js"></script>
+</body>
+</html> 

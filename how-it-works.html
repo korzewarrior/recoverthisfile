@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about our advanced file recovery technology and how RecoverThisFile ensures miraculous data restoration">
+    <meta name="keywords" content="secure recovery, how it works, file restoration, quantum reconstruction, data recovery">
+    <title>How It Works | RecoverThisFile</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .tech-section {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 2.5rem;
+            margin-bottom: 2.5rem;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .tech-section h3 {
+            font-size: 1.75rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-weight: var(--font-weight-semibold);
+            position: relative;
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+        
+        .tech-section h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--primary-gradient);
+            border-radius: 50px;
+        }
+        
+        .tech-section h4 {
+            font-size: 1.3rem;
+            color: var(--gray-800);
+            margin: 2rem 0 1rem;
+            font-weight: var(--font-weight-semibold);
+        }
+        
+        .tech-section p {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+            color: var(--gray-700);
+        }
+        
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .tech-card {
+            background-color: var(--gray-50);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            box-shadow: var(--box-shadow-sm);
+            transition: var(--transition);
+            text-align: center;
+            border: 1px solid var(--gray-200);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .tech-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--box-shadow);
+            border-color: var(--primary-color);
+        }
+        
+        .tech-card:hover::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(0, 120, 231, 0.05), transparent);
+            animation: tech-card-shine 1.5s ease-in-out;
+        }
+        
+        @keyframes tech-card-shine {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(100%);
+            }
+        }
+        
+        .tech-card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        .tech-card h5 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--gray-800);
+            font-weight: var(--font-weight-semibold);
+        }
+        
+        .tech-card p {
+            font-size: 0.9rem;
+            color: var(--gray-600);
+            margin: 0;
+        }
+        
+        .process-steps {
+            margin: 2rem 0;
+            counter-reset: step-counter;
+        }
+        
+        .process-step {
+            display: flex;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        
+        .step-number {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--primary-gradient);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: var(--font-weight-bold);
+            font-size: 1.3rem;
+            margin-right: 1.5rem;
+            flex-shrink: 0;
+        }
+        
+        .step-number::before {
+            counter-increment: step-counter;
+            content: counter(step-counter);
+        }
+        
+        .step-content {
+            flex: 1;
+            padding-top: 0.5rem;
+        }
+        
+        .step-title {
+            font-size: 1.2rem;
+            color: var(--gray-800);
+            margin-bottom: 0.5rem;
+            font-weight: var(--font-weight-semibold);
+        }
+        
+        .step-description {
+            color: var(--gray-700);
+            line-height: 1.6;
+        }
+        
+        .process-step::after {
+            content: '';
+            position: absolute;
+            top: 50px;
+            left: 25px;
+            width: 2px;
+            height: calc(100% - 25px);
+            background-color: var(--gray-300);
+            z-index: 0;
+        }
+        
+        .process-step:last-child::after {
+            display: none;
+        }
+        
+        .tech-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background-color: rgba(0, 120, 231, 0.1);
+            color: var(--primary-color);
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: var(--font-weight-semibold);
+            margin: 0.25rem;
+        }
+        
+        .quantum-field {
+            background-color: var(--gray-100);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            position: relative;
+            overflow: hidden;
+            border: 1px dashed var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <a href="index.html" class="logo-link">
+                    <div class="logo-3d-container">
+                        <div class="logo-3d">
+                            <div class="logo-face logo-front"></div>
+                            <div class="logo-face logo-back"></div>
+                            <div class="logo-face logo-right"></div>
+                            <div class="logo-face logo-left"></div>
+                            <div class="logo-face logo-top"></div>
+                            <div class="logo-face logo-bottom"></div>
+                        </div>
+                    </div>
+                    <div class="brand-text">
+                        <h1>RecoverThisFile<span class="tld">.com</span></h1>
+                        <p class="tagline">Enterprise-Grade Digital Resurrection Solution</p>
+                    </div>
+                </a>
+                <div class="header-badges">
+                    <div class="security-badge">
+                        <div class="badge-content">
+                            <span class="badge-icon">🔄</span>
+                            <span>CERTIFIED RECOVERY</span>
+                        </div>
+                    </div>
+                    <div class="security-badge enterprise">
+                        <div class="badge-content">
+                            <span class="badge-icon">⚙️</span>
+                            <span>ENTERPRISE READY</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Recover</a></li>
+                    <li><a href="how-it-works.html" class="active">How It Works</a></li>
+                    <li><a href="enterprise-solutions.html">Enterprise</a></li>
+                    <li><a href="comparison.html">Comparison</a></li>
+                    <li><a href="testimonials.html">Testimonials</a></li>
+                    <li><a href="team.html">Our Team</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="page-hero">
+            <h2>Quantum Reconstruction Technology</h2>
+            <p>Our proprietary data resurrection process leverages advanced quantum algorithms to recover what others claim is permanently deleted.</p>
+        </div>
+        
+        <div class="tech-section">
+            <h3>The Science of Digital Resurrection</h3>
+            <p>At RecoverThisFile, we've developed a revolutionary approach to data recovery that defies conventional limitations. While others claim to permanently erase data, our technology can retrieve information from virtually any digital source through our proprietary Quantum Reconstruction Engine™.</p>
+            
+            <div class="quantum-field">
+                <p><strong>Did you know?</strong> When files are "deleted," they aren't truly gone. Conventional deletion merely removes the reference to the file in the file system, while the actual data remains on the storage medium until overwritten. Our technology goes beyond this understanding, accessing the quantum state of storage media to recover even "overwritten" data.</p>
+            </div>
+            
+            <h4>Our Core Technologies</h4>
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <div class="tech-card-icon">🧬</div>
+                    <h5>Molecular Data Mapping</h5>
+                    <p>Maps the molecular structure of storage media to identify residual data patterns</p>
+                </div>
+                
+                <div class="tech-card">
+                    <div class="tech-card-icon">⚛️</div>
+                    <h5>Quantum Decompilation</h5>
+                    <p>Leverages quantum computing principles to reconstruct deleted file structures</p>
+                </div>
+                
+                <div class="tech-card">
+                    <div class="tech-card-icon">🔄</div>
+                    <h5>Time-Reversed Entropy</h5>
+                    <p>Reverses information entropy to rebuild corrupted or fragmented data</p>
+                </div>
+                
+                <div class="tech-card">
+                    <div class="tech-card-icon">🔍</div>
+                    <h5>45-Layer Forensics</h5>
+                    <p>Multi-layered analysis detects data remnants invisible to conventional tools</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="tech-section">
+            <h3>The Recovery Process</h3>
+            <p>Our enterprise-grade recovery process follows a meticulous sequence of steps, ensuring maximum data integrity while maintaining complete security. Each file undergoes a comprehensive 45-point recovery protocol.</p>
+            
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number"></div>
+                    <div class="step-content">
+                        <div class="step-title">Initial Quantum Scan</div>
+                        <div class="step-description">Our system performs a non-invasive quantum scan of your file's digital fingerprint, identifying all potential data remnants across connected storage devices, including cloud backups.</div>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number"></div>
+                    <div class="step-content">
+                        <div class="step-title">Molecular Pattern Mapping</div>
+                        <div class="step-description">Using our proprietary algorithms, we analyze the molecular structure of digital storage to locate microscopic data fragments, creating a comprehensive map of recoverable information.</div>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number"></div>
+                    <div class="step-content">
+                        <div class="step-title">Quantum Decompilation</div>
+                        <div class="step-description">Our quantum engines begin reassembling data fragments using patented time-reversed entropy techniques, rebuilding file structures at the binary level with 99.97% accuracy.</div>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number"></div>
+                    <div class="step-content">
+                        <div class="step-title">Data Reconstruction</div>
+                        <div class="step-description">The system meticulously reconstructs file headers, metadata, and content, restoring even corrupt segments through predictive algorithms based on file type-specific patterns.</div>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number"></div>
+                    <div class="step-content">
+                        <div class="step-title">Integrity Verification</div>
+                        <div class="step-description">Each recovered file undergoes comprehensive verification through our 45-layer integrity check, ensuring complete and accurate restoration with zero data corruption.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="tech-section">
+            <h3>Recovery Success Rate</h3>
+            <p>Our Quantum Reconstruction Engine™ achieves unprecedented recovery rates, even in scenarios where conventional tools fail:</p>
+            
+            <div style="margin: 2rem 0;">
+                <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                    <div style="width: 150px; font-weight: var(--font-weight-semibold);">Standard deletion:</div>
+                    <div style="flex-grow: 1; background-color: var(--gray-200); height: 30px; border-radius: 15px; overflow: hidden; position: relative;">
+                        <div style="width: 99.97%; height: 100%; background: var(--primary-gradient);"></div>
+                        <span style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); color: white; font-size: 0.9rem; font-weight: var(--font-weight-bold);">99.97%</span>
+                    </div>
+                </div>
+                
+                <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                    <div style="width: 150px; font-weight: var(--font-weight-semibold);">Multiple overwrites:</div>
+                    <div style="flex-grow: 1; background-color: var(--gray-200); height: 30px; border-radius: 15px; overflow: hidden; position: relative;">
+                        <div style="width: 98.5%; height: 100%; background: var(--primary-gradient);"></div>
+                        <span style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); color: white; font-size: 0.9rem; font-weight: var(--font-weight-bold);">98.5%</span>
+                    </div>
+                </div>
+                
+                <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                    <div style="width: 150px; font-weight: var(--font-weight-semibold);">Formatted drives:</div>
+                    <div style="flex-grow: 1; background-color: var(--gray-200); height: 30px; border-radius: 15px; overflow: hidden; position: relative;">
+                        <div style="width: 97.3%; height: 100%; background: var(--primary-gradient);"></div>
+                        <span style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); color: white; font-size: 0.9rem; font-weight: var(--font-weight-bold);">97.3%</span>
+                    </div>
+                </div>
+                
+                <div style="display: flex; align-items: center;">
+                    <div style="width: 150px; font-weight: var(--font-weight-semibold);">Military-grade wiping:</div>
+                    <div style="flex-grow: 1; background-color: var(--gray-200); height: 30px; border-radius: 15px; overflow: hidden; position: relative;">
+                        <div style="width: 89.2%; height: 100%; background: var(--primary-gradient);"></div>
+                        <span style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); color: white; font-size: 0.9rem; font-weight: var(--font-weight-bold);">89.2%</span>
+                    </div>
+                </div>
+            </div>
+            
+            <p>Our technology is constantly evolving through our advanced machine learning algorithms, with recovery success rates improving by approximately 0.15% each month.</p>
+            
+            <div style="margin-top: 2rem;">
+                <h4>Supported File Types</h4>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                    <span class="tech-badge">Documents (.doc, .docx, .pdf, .txt)</span>
+                    <span class="tech-badge">Spreadsheets (.xls, .xlsx, .csv)</span>
+                    <span class="tech-badge">Images (.jpg, .png, .gif, .raw)</span>
+                    <span class="tech-badge">Videos (.mp4, .mov, .avi)</span>
+                    <span class="tech-badge">Audio (.mp3, .wav, .flac)</span>
+                    <span class="tech-badge">Archives (.zip, .rar, .7z)</span>
+                    <span class="tech-badge">Databases (.sql, .db, .mdb)</span>
+                    <span class="tech-badge">Email (.pst, .ost, .mbox)</span>
+                    <span class="tech-badge">And 700+ more formats</span>
+                </div>
+            </div>
+        </div>
+        
+        <section class="enterprise-callout">
+            <div class="callout-content">
+                <h3>Advanced Enterprise Solutions Available</h3>
+                <p>Custom deployment options for government and corporate environments, including on-premise Quantum Recovery Arrays™</p>
+                <a href="enterprise-solutions.html" class="enterprise-badge">Learn More</a>
+            </div>
+        </section>
+
+        <footer>
+            <!-- Footer content will be injected by footer.js -->
+        </footer>
+    </div>
+
+    <!-- Theme toggle button -->
+    <button id="theme-switch" aria-label="Toggle dark/light mode">🌓</button>
+
+    <script src="js/theme.js"></script>
+    <script src="js/footer.js"></script>
+</body>
+</html> 

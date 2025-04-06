@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Meet the brilliant minds behind RecoverThisFile's revolutionary data recovery technology">
+    <meta name="keywords" content="recovery team, quantum engineers, data scientists, recovery experts">
+    <title>Our Team | RecoverThisFile</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .team-hero {
+            background: linear-gradient(135deg, var(--primary-dark), var(--accent-color));
+            color: white;
+            border-radius: var(--border-radius);
+            padding: 3rem 2rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--box-shadow-lg);
+        }
+        
+        .team-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.05'/%3E%3C/svg%3E");
+        }
+        
+        .team-hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: var(--font-weight-bold);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .team-hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .team-member {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--box-shadow-lg);
+        }
+        
+        .member-photo {
+            aspect-ratio: 1 / 1;
+            width: 100%;
+            background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .member-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+            transition: transform 0.5s ease;
+        }
+        
+        .team-member:hover .member-photo img {
+            transform: scale(1.05);
+        }
+        
+        .member-initial {
+            font-size: 5rem;
+            font-weight: var(--font-weight-bold);
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        /* Hide initials when image is present */
+        .member-photo img + .member-initial {
+            display: none;
+        }
+        
+        .member-info {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .member-name {
+            font-size: 1.2rem;
+            font-weight: var(--font-weight-bold);
+            margin-bottom: 0.25rem;
+            color: var(--gray-800);
+        }
+        
+        .member-title {
+            font-size: 0.9rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-weight: var(--font-weight-medium);
+        }
+        
+        .member-bio {
+            font-size: 0.95rem;
+            color: var(--gray-700);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        
+        .member-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: auto;
+        }
+        
+        .member-badge {
+            font-size: 0.8rem;
+            background-color: rgba(0, 120, 231, 0.1);
+            color: var(--primary-color);
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            display: inline-block;
+        }
+        
+        .team-intro {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: var(--box-shadow);
+            margin-bottom: 3rem;
+        }
+        
+        .team-intro p:last-child {
+            margin-bottom: 0;
+        }
+        
+        .team-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .team-stat {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            text-align: center;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+        
+        .team-stat:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--box-shadow-lg);
+        }
+        
+        .stat-value {
+            font-size: 3rem;
+            font-weight: var(--font-weight-bold);
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            font-size: 1rem;
+            color: var(--text-muted);
+        }
+        
+        .section-divider {
+            height: 4px;
+            background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+            width: 100px;
+            margin: 3rem auto;
+            border-radius: 50px;
+        }
+        
+        .values-section {
+            margin: 3rem 0;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .value-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            text-align: center;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            border-top: 3px solid var(--primary-color);
+        }
+        
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--box-shadow-lg);
+        }
+        
+        .value-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        .value-title {
+            font-size: 1.2rem;
+            font-weight: var(--font-weight-semibold);
+            margin-bottom: 0.75rem;
+            color: var(--gray-800);
+        }
+        
+        .value-description {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <a href="index.html" class="logo-link">
+                    <div class="logo-3d-container">
+                        <div class="logo-3d">
+                            <div class="logo-face logo-front"></div>
+                            <div class="logo-face logo-back"></div>
+                            <div class="logo-face logo-right"></div>
+                            <div class="logo-face logo-left"></div>
+                            <div class="logo-face logo-top"></div>
+                            <div class="logo-face logo-bottom"></div>
+                        </div>
+                    </div>
+                    <div class="brand-text">
+                        <h1>RecoverThisFile<span class="tld">.com</span></h1>
+                        <p class="tagline">Enterprise-Grade Digital Resurrection Solution</p>
+                    </div>
+                </a>
+                <div class="header-badges">
+                    <div class="security-badge">
+                        <div class="badge-content">
+                            <span class="badge-icon">🔄</span>
+                            <span>CERTIFIED RECOVERY</span>
+                        </div>
+                    </div>
+                    <div class="security-badge enterprise">
+                        <div class="badge-content">
+                            <span class="badge-icon">⚙️</span>
+                            <span>ENTERPRISE READY</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Recover</a></li>
+                    <li><a href="how-it-works.html">How It Works</a></li>
+                    <li><a href="enterprise-solutions.html">Enterprise</a></li>
+                    <li><a href="comparison.html">Comparison</a></li>
+                    <li><a href="testimonials.html">Testimonials</a></li>
+                    <li><a href="team.html" class="active">Our Team</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="page-hero">
+            <h2>Meet Our Recovery Experts</h2>
+            <p>The brilliant minds pioneering the future of quantum data resurrection technology</p>
+        </div>
+        
+        <div class="team-intro">
+            <h3>Who We Are</h3>
+            <p>At RecoverThisFile, we've assembled a world-class team of quantum physicists, data scientists, forensic recovery specialists, and security experts. Our diverse team combines centuries of collective experience in data recovery technology with cutting-edge research in quantum molecular reconstruction.</p>
+            <p>Each member of our team is dedicated to pushing the boundaries of what's possible in data recovery, ensuring that "deleted" never truly means "gone forever." Our experts have authored over 200 peer-reviewed papers and hold more than 150 patents in quantum reconstruction technology.</p>
+        </div>
+        
+        <div class="team-stats">
+            <div class="team-stat">
+                <div class="stat-value">56</div>
+                <div class="stat-label">Recovery Experts</div>
+            </div>
+            <div class="team-stat">
+                <div class="stat-value">150+</div>
+                <div class="stat-label">Patents Held</div>
+            </div>
+            <div class="team-stat">
+                <div class="stat-value">28</div>
+                <div class="stat-label">PhD Scientists</div>
+            </div>
+            <div class="team-stat">
+                <div class="stat-value">99.97%</div>
+                <div class="stat-label">Recovery Rate</div>
+            </div>
+        </div>
+        
+        <h3>Leadership Team</h3>
+        <div class="team-grid">
+            <div class="team-member">
+                <div class="member-photo">
+                    <img src="images/danielquantum.png" alt="Dr. Daniel Quantum">
+                    <div class="member-initial">D</div>
+                </div>
+                <div class="member-info">
+                    <div class="member-name">Dr. Daniel Quantum</div>
+                    <div class="member-title">Founder & Chief Quantum Officer</div>
+                    <div class="member-bio">
+                        Pioneered the field of molecular data mapping and quantum reconstruction. Previously led quantum computing initiatives at MIT and CERN. Dr. Quantum holds 32 patents in data recovery technology and has published over 80 research papers on quantum information theory.
+                    </div>
+                    <div class="member-badges">
+                        <span class="member-badge">Quantum Physics</span>
+                        <span class="member-badge">MIT</span>
+                        <span class="member-badge">32 Patents</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="team-member">
+                <div class="member-photo">
+                    <img src="images/elenerestoration.png" alt="Dr. Elena Restoration">
+                    <div class="member-initial">E</div>
+                </div>
+                <div class="member-info">
+                    <div class="member-name">Dr. Elena Restoration</div>
+                    <div class="member-title">Chief Technology Officer</div>
+                    <div class="member-bio">
+                        World-renowned expert in advanced forensic data recovery. Dr. Restoration developed the 45-layer analysis protocol that forms the core of our recovery technology. Former head of digital forensics at the National Security Agency with expertise in recovering data from severely damaged media.
+                    </div>
+                    <div class="member-badges">
+                        <span class="member-badge">Forensic Recovery</span>
+                        <span class="member-badge">NSA Veteran</span>
+                        <span class="member-badge">45-Layer Protocol</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="team-member">
+                <div class="member-photo">
+                    <img src="images/jamesresurrector.png" alt="James Resurrector">
+                    <div class="member-initial">J</div>
+                </div>
+                <div class="member-info">
+                    <div class="member-name">James Resurrector</div>
+                    <div class="member-title">Chief Executive Officer</div>
+                    <div class="member-bio">
+                        Former tech executive with 20+ years of experience scaling enterprise software companies. James brings operational excellence and strategic vision to RecoverThisFile, leading our mission to make permanent deletion a thing of the past for organizations worldwide.
+                    </div>
+                    <div class="member-badges">
+                        <span class="member-badge">Enterprise</span>
+                        <span class="member-badge">Strategy</span>
+                        <span class="member-badge">Leadership</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="team-member">
+                <div class="member-photo">
+                    <img src="images/sofiadecompiler.png" alt="Dr. Sofia Decompiler">
+                    <div class="member-initial">S</div>
+                </div>
+                <div class="member-info">
+                    <div class="member-name">Dr. Sofia Decompiler</div>
+                    <div class="member-title">VP of Quantum Algorithm Development</div>
+                    <div class="member-bio">
+                        Mathematical genius responsible for our proprietary decompilation algorithms that reassemble fragmented data. Dr. Decompiler's breakthroughs in time-reversed entropy modeling have improved our recovery success rates by 32% since joining the team.
+                    </div>
+                    <div class="member-badges">
+                        <span class="member-badge">Algorithms</span>
+                        <span class="member-badge">Mathematics</span>
+                        <span class="member-badge">Entropy Modeling</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="team-member">
+                <div class="member-photo">
+                    <img src="images/marcussecurity.png" alt="Dr. Marcus Security">
+                    <div class="member-initial">M</div>
+                </div>
+                <div class="member-info">
+                    <div class="member-name">Dr. Marcus Security</div>
+                    <div class="member-title">Chief Security Officer</div>
+                    <div class="member-bio">
+                        Ensures that our recovery processes maintain the highest levels of data protection and privacy. Dr. Security previously led cybersecurity operations for several Fortune 100 companies and has designed security protocols that exceed military-grade standards.
+                    </div>
+                    <div class="member-badges">
+                        <span class="member-badge">Cybersecurity</span>
+                        <span class="member-badge">Compliance</span>
+                        <span class="member-badge">Data Privacy</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="team-member">
+                <div class="member-photo">
+                    <img src="images/priyamolecular.png" alt="Dr. Priya Molecular">
+                    <div class="member-initial">P</div>
+                </div>
+                <div class="member-info">
+                    <div class="member-name">Dr. Priya Molecular</div>
+                    <div class="member-title">Director of Molecular Data Mapping</div>
+                    <div class="member-bio">
+                        Specialist in analyzing the molecular structure of storage media to extract remnant data patterns. Dr. Molecular's research has enabled recovery from media that has undergone multiple overwrites, previously thought to be impossible.
+                    </div>
+                    <div class="member-badges">
+                        <span class="member-badge">Molecular Analysis</span>
+                        <span class="member-badge">Material Science</span>
+                        <span class="member-badge">Storage Media</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section-divider"></div>
+        
+        <section class="values-section">
+            <h3>Our Core Values</h3>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">🔍</div>
+                    <div class="value-title">Persistence in Recovery</div>
+                    <div class="value-description">We believe nothing is truly unrecoverable. We persist until we find a solution, no matter how challenging the data loss scenario.</div>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">🔒</div>
+                    <div class="value-title">Security & Privacy</div>
+                    <div class="value-description">We maintain the highest standards of security throughout the recovery process, ensuring your recovered data remains private and protected.</div>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">⚡</div>
+                    <div class="value-title">Innovation</div>
+                    <div class="value-description">We continuously push the boundaries of what's possible in data recovery through groundbreaking research and development.</div>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">🤝</div>
+                    <div class="value-title">Customer Success</div>
+                    <div class="value-description">Your data recovery success is our ultimate measure of achievement. We're not satisfied until your critical files are fully restored.</div>
+                </div>
+            </div>
+        </section>
+        
+        <div class="callout-box">
+            <h3>Join Our Elite Recovery Team</h3>
+            <p>Are you passionate about data resurrection and quantum technology? We're always looking for brilliant minds to join our mission.</p>
+            <div class="btn-container">
+                <a href="#" class="btn-primary">View Open Positions <span>→</span></a>
+            </div>
+        </div>
+
+        <footer>
+            <!-- Footer content will be injected by footer.js -->
+        </footer>
+    </div>
+
+    <!-- Theme toggle button -->
+    <button id="theme-switch" aria-label="Toggle dark/light mode">🌓</button>
+
+    <script src="js/theme.js"></script>
+    <script src="js/footer.js"></script>
+    <script>
+        // Handle image loading errors - show initials as fallback
+        document.addEventListener('DOMContentLoaded', function() {
+            const teamImages = document.querySelectorAll('.member-photo img');
+            
+            teamImages.forEach(function(img) {
+                img.addEventListener('error', function() {
+                    // Hide the broken image
+                    this.style.display = 'none';
+                    
+                    // Show the initial
+                    const initial = this.nextElementSibling;
+                    if (initial && initial.classList.contains('member-initial')) {
+                        initial.style.display = 'block';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html> 

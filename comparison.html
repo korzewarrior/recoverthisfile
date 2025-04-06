@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="See how RecoverThisFile's recovery technology compares to competitors and deletion services">
+    <meta name="keywords" content="file recovery comparison, deleted file recovery, better than deletethisfile, data recovery">
+    <title>Comparison | RecoverThisFile</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .comparison-hero {
+            background: linear-gradient(135deg, var(--primary-dark), var(--accent-color));
+            color: white;
+            border-radius: var(--border-radius);
+            padding: 3rem 2rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--box-shadow-lg);
+        }
+        
+        .comparison-hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: var(--font-weight-bold);
+        }
+        
+        .comparison-hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+        
+        .vs-container {
+            display: flex;
+            justify-content: center;
+            margin: 3rem 0;
+            position: relative;
+        }
+        
+        .vs-column {
+            flex: 1;
+            max-width: 400px;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            background-color: var(--card-bg);
+            box-shadow: var(--box-shadow);
+            text-align: center;
+            transition: var(--transition);
+        }
+        
+        .vs-column:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--box-shadow-lg);
+        }
+        
+        .vs-column.recovery {
+            border-top: 5px solid var(--primary-color);
+            margin-right: 1rem;
+        }
+        
+        .vs-column.deletion {
+            border-top: 5px solid #ff5252;
+            margin-left: 1rem;
+            opacity: 0.7;
+        }
+        
+        .vs-middle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: var(--gray-800);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: var(--font-weight-bold);
+            font-size: 1.2rem;
+            box-shadow: var(--box-shadow);
+            z-index: 10;
+        }
+        
+        .vs-logo {
+            margin-bottom: 1.5rem;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .vs-logo h3 {
+            font-size: 1.5rem;
+            margin: 0;
+        }
+        
+        .recovery-logo {
+            color: var(--primary-color);
+        }
+        
+        .deletion-logo {
+            color: #ff5252;
+        }
+        
+        .vs-logo .tld {
+            font-weight: var(--font-weight-regular);
+        }
+        
+        .recovery-logo .tld {
+            color: var(--accent-color);
+        }
+        
+        .deletion-logo .tld {
+            color: #ff8a80;
+        }
+        
+        .vs-tagline {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 3rem 0;
+            box-shadow: var(--box-shadow);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+        }
+        
+        .comparison-table th {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: left;
+            padding: 1rem;
+            font-weight: var(--font-weight-semibold);
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background-color: rgba(0, 120, 231, 0.05);
+        }
+        
+        .comparison-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--gray-200);
+        }
+        
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .checkmark {
+            color: var(--accent-color);
+            font-weight: var(--font-weight-bold);
+        }
+        
+        .crossmark {
+            color: #ff5252;
+        }
+        
+        .highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .highlight-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .highlight-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--box-shadow-lg);
+        }
+        
+        .highlight-card h4 {
+            margin-top: 0;
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .highlight-card p {
+            margin: 0;
+            color: var(--text-muted);
+        }
+        
+        .quote-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: var(--box-shadow);
+            margin: 3rem 0;
+            position: relative;
+        }
+        
+        .quote-icon {
+            position: absolute;
+            top: -20px;
+            left: 2rem;
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+        
+        .quote-content {
+            font-size: 1.2rem;
+            font-style: italic;
+            color: var(--gray-700);
+            margin-bottom: 1rem;
+        }
+        
+        .quote-author {
+            font-weight: var(--font-weight-semibold);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .company-badge {
+            font-size: 0.8rem;
+            padding: 0.25rem 0.5rem;
+            background-color: rgba(0, 120, 231, 0.1);
+            color: var(--primary-color);
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <a href="index.html" class="logo-link">
+                    <div class="logo-3d-container">
+                        <div class="logo-3d">
+                            <div class="logo-face logo-front"></div>
+                            <div class="logo-face logo-back"></div>
+                            <div class="logo-face logo-right"></div>
+                            <div class="logo-face logo-left"></div>
+                            <div class="logo-face logo-top"></div>
+                            <div class="logo-face logo-bottom"></div>
+                        </div>
+                    </div>
+                    <div class="brand-text">
+                        <h1>RecoverThisFile<span class="tld">.com</span></h1>
+                        <p class="tagline">Enterprise-Grade Digital Resurrection Solution</p>
+                    </div>
+                </a>
+                <div class="header-badges">
+                    <div class="security-badge">
+                        <div class="badge-content">
+                            <span class="badge-icon">🔄</span>
+                            <span>CERTIFIED RECOVERY</span>
+                        </div>
+                    </div>
+                    <div class="security-badge enterprise">
+                        <div class="badge-content">
+                            <span class="badge-icon">⚙️</span>
+                            <span>ENTERPRISE READY</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Recover</a></li>
+                    <li><a href="how-it-works.html">How It Works</a></li>
+                    <li><a href="enterprise-solutions.html">Enterprise</a></li>
+                    <li><a href="comparison.html" class="active">Comparison</a></li>
+                    <li><a href="testimonials.html">Testimonials</a></li>
+                    <li><a href="team.html">Our Team</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="page-hero">
+            <h2>Why Choose RecoverThisFile?</h2>
+            <p>Compare our industry-leading recovery technology with competing solutions and see why organizations worldwide trust us with their most valuable data.</p>
+        </div>
+        
+        <h3>RecoverThisFile vs DeleteThisFile</h3>
+        <p>While DeleteThisFile claims to permanently delete your data, RecoverThisFile employs advanced quantum reconstruction technology to recover what others claim is gone forever. See how we compare:</p>
+        
+        <div class="vs-container">
+            <div class="vs-column recovery">
+                <div class="vs-logo">
+                    <h3 class="recovery-logo">RecoverThisFile<span class="tld">.com</span></h3>
+                </div>
+                <div class="vs-tagline">Enterprise-Grade Digital Resurrection Solution</div>
+                <p>Our groundbreaking Quantum Reconstruction Technology™ can recover files from any device with a 99.97% success rate, even if they've been "permanently" deleted.</p>
+                <p>We leverage 45-layer forensic analysis and molecular data mapping to resurrect your most critical files.</p>
+            </div>
+            
+            <div class="vs-middle">VS</div>
+            
+            <div class="vs-column deletion">
+                <div class="vs-logo">
+                    <h3 class="deletion-logo">DeleteThisFile<span class="tld">.com</span></h3>
+                </div>
+                <div class="vs-tagline">Allegedly "Permanent" File Deletion</div>
+                <p>Claims to permanently erase files, but our tests show their deletion protocols can be reversed by our quantum technology in 99.97% of cases.</p>
+                <p>Their "military grade" wiping claims are easily defeated by our molecular pattern reconstruction processes.</p>
+            </div>
+        </div>
+        
+        <h3>Feature Comparison</h3>
+        <p>See how RecoverThisFile stands against competing solutions:</p>
+        
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Feature</th>
+                    <th>RecoverThisFile</th>
+                    <th>DeleteThisFile</th>
+                    <th>Traditional Recovery Tools</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Recovery Success Rate</td>
+                    <td><span class="checkmark">99.97%</span></td>
+                    <td><span class="crossmark">0% (claims 100% deletion)</span></td>
+                    <td>25-70%</td>
+                </tr>
+                <tr>
+                    <td>Quantum Reconstruction Technology</td>
+                    <td><span class="checkmark">✓</span></td>
+                    <td><span class="crossmark">✗</span></td>
+                    <td><span class="crossmark">✗</span></td>
+                </tr>
+                <tr>
+                    <td>Molecular Pattern Mapping</td>
+                    <td><span class="checkmark">✓</span></td>
+                    <td><span class="crossmark">✗</span></td>
+                    <td><span class="crossmark">✗</span></td>
+                </tr>
+                <tr>
+                    <td>Can Recover from "Military-Grade" Wiping</td>
+                    <td><span class="checkmark">✓ (89.2% success)</span></td>
+                    <td><span class="crossmark">✗</span></td>
+                    <td><span class="crossmark">✗</span></td>
+                </tr>
+                <tr>
+                    <td>Enterprise-Grade Security</td>
+                    <td><span class="checkmark">✓</span></td>
+                    <td><span class="checkmark">✓</span></td>
+                    <td><span class="crossmark">Limited</span></td>
+                </tr>
+                <tr>
+                    <td>Global Compliance (GDPR, HIPAA, etc.)</td>
+                    <td><span class="checkmark">✓</span></td>
+                    <td><span class="checkmark">✓</span></td>
+                    <td><span class="crossmark">Limited</span></td>
+                </tr>
+                <tr>
+                    <td>On-Premise Deployment</td>
+                    <td><span class="checkmark">✓</span></td>
+                    <td><span class="checkmark">✓</span></td>
+                    <td><span class="checkmark">✓</span></td>
+                </tr>
+                <tr>
+                    <td>Gamification Features</td>
+                    <td><span class="checkmark">✓</span></td>
+                    <td><span class="checkmark">✓</span></td>
+                    <td><span class="crossmark">✗</span></td>
+                </tr>
+                <tr>
+                    <td>Process Multiple Files Simultaneously</td>
+                    <td><span class="checkmark">✓</span></td>
+                    <td><span class="checkmark">✓</span></td>
+                    <td><span class="crossmark">Limited</span></td>
+                </tr>
+                <tr>
+                    <td>File Type Support</td>
+                    <td><span class="checkmark">700+ formats</span></td>
+                    <td><span class="checkmark">All formats</span></td>
+                    <td>50-200 formats</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h3>Performance Highlights</h3>
+        <div class="highlights">
+            <div class="highlight-card">
+                <h4>Quantum Recovery Speed</h4>
+                <p>RecoverThisFile processes up to 2TB/hour with our enterprise solutions, 10x faster than leading traditional recovery tools.</p>
+            </div>
+            
+            <div class="highlight-card">
+                <h4>Success Rate Comparison</h4>
+                <p>Our 99.97% recovery success rate for standard deletions far exceeds the industry average of 40-60% for traditional recovery software.</p>
+            </div>
+            
+            <div class="highlight-card">
+                <h4>Recovery from "Secure Deletion"</h4>
+                <p>Unlike competitors who cannot recover from secure deletion tools like DeleteThisFile, our technology achieves 89.2% success against military-grade wiping.</p>
+            </div>
+        </div>
+        
+        <div class="quote-card">
+            <div class="quote-icon">"</div>
+            <div class="quote-content">We've tested all major secure deletion products, including DeleteThisFile. None can withstand RecoverThisFile's quantum reconstruction technology. Their claims of permanent deletion are significantly exaggerated.</div>
+            <div class="quote-author">
+                Dr. Alan Quantum, <span class="company-badge">Digital Forensics Institute</span>
+            </div>
+        </div>
+        
+        <div class="quote">
+            <p>"With our Quantum Reconstruction technology, we're not only counteracting deletion tools but redefining the very concept of data permanence."</p>
+            <cite>— Dr. Alan Quantum, Lead Recovery Scientist</cite>
+        </div>
+        
+        <div class="callout-box">
+            <h3>Ready to Experience Superior Recovery?</h3>
+            <p>See the RecoverThisFile difference for yourself. Our technology recovers what others claim is gone forever.</p>
+            <div class="btn-container">
+                <a href="index.html" class="btn-primary">Recover Files Now <span>→</span></a>
+                <a href="enterprise-solutions.html" class="btn-secondary">Enterprise Solutions</a>
+            </div>
+        </div>
+
+        <footer>
+            <!-- Footer content will be injected by footer.js -->
+        </footer>
+    </div>
+
+    <!-- Theme toggle button -->
+    <button id="theme-switch" aria-label="Toggle dark/light mode">🌓</button>
+
+    <script src="js/theme.js"></script>
+    <script src="js/footer.js"></script>
+</body>
+</html> 

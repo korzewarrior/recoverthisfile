@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="RecoverThisFile.com - The ultimate file recovery service with quantum detection technology to recover your most important deleted files.">
+    <meta name="keywords" content="quantum detective, file recovery, data restoration, secure recovery, forensic data recovery">
+    <title>RecoverThisFile.com - Quantum File Detective</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Quantum File Detective Specific Styles */
+        
+        /* Case File Form */
+        .case-file-container {
+            background: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: var(--box-shadow);
+            padding: 2rem;
+            color: var(--text-color);
+            max-width: 800px;
+            margin: 2rem auto;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+        
+        .case-file-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='currentColor' fill-opacity='0.08' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.2;
+            z-index: 0;
+        }
+        
+        .case-file-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .case-file-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        
+        .detective-hat {
+            font-size: 1.8rem;
+        }
+        
+        .case-file-subtitle {
+            font-size: 1rem;
+            opacity: 0.95;
+            max-width: 600px;
+            margin: 0 auto;
+            color: var(--text-color);
+        }
+        
+        .case-form {
+            background-color: var(--form-bg);
+            border-radius: 8px;
+            padding: 1.5rem;
+            position: relative;
+            z-index: 1;
+            border: 1px solid var(--form-border);
+        }
+        
+        .form-section {
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid var(--section-border);
+            padding-bottom: 1.5rem;
+        }
+        
+        .form-section:last-of-type {
+            border-bottom: none;
+        }
+        
+        .form-section-title {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .magnifying-glass {
+            font-size: 1.2rem;
+        }
+        
+        .form-row {
+            margin-bottom: 1rem;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            font-size: 0.95rem;
+            color: var(--label-color);
+        }
+        
+        .form-textarea, .form-select {
+            width: 100%;
+            padding: 0.75rem;
+            background-color: var(--input-bg);
+            border: 1px solid var(--input-border);
+            border-radius: 6px;
+            color: var(--text-color);
+            font-family: inherit;
+            resize: vertical;
+            min-height: 80px;
+            transition: border 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .form-select {
+            min-height: auto;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23333333' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10l-5 5z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 0.75rem center;
+            background-size: 16px;
+        }
+        
+        .form-textarea:focus, .form-select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 2px rgba(var(--primary-rgb), 0.25);
+        }
+        
+        .range-slider {
+            width: 100%;
+            height: 8px;
+            -webkit-appearance: none;
+            background-color: var(--range-track-bg);
+            border-radius: 4px;
+            outline: none;
+            margin: 1rem 0;
+        }
+        
+        .range-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+            border: 2px solid var(--range-thumb-border);
+        }
+        
+        .range-labels {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            color: var(--range-label-color);
+            margin-top: 0.25rem;
+            font-weight: 500;
+        }
+        
+        .checkbox-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 0.75rem;
+        }
+        
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .checkbox-item input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            -webkit-appearance: none;
+            appearance: none;
+            background-color: var(--checkbox-bg);
+            border: 2px solid var(--checkbox-border);
+            border-radius: 4px;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .checkbox-item input[type="checkbox"]:checked {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .checkbox-item input[type="checkbox"]:checked::after {
+            content: '✓';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 14px;
+            color: var(--check-color);
+            font-weight: bold;
+        }
+        
+        .checkbox-label {
+            font-size: 0.9rem;
+            cursor: pointer;
+            color: var(--checkbox-label-color);
+            font-weight: 500;
+        }
+        
+        .submit-container {
+            text-align: center;
+            margin-top: 2rem;
+        }
+        
+        .submit-button {
+            background: var(--primary-gradient);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 0.75rem 1.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 12px rgba(var(--primary-rgb), 0.3);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .submit-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(var(--primary-rgb), 0.4);
+        }
+        
+        .submit-button:active {
+            transform: translateY(0);
+        }
+        
+        .submit-icon {
+            font-size: 1.2rem;
+        }
+        
+        /* Investigation Progress Styles */
+        .investigation-container {
+            background: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: var(--box-shadow);
+            padding: 2rem;
+            color: var(--text-color);
+            max-width: 800px;
+            margin: 2rem auto;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+        
+        .investigation-title {
+            font-size: 1.8rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+        
+        .investigation-stage {
+            background-color: var(--form-bg);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--form-border);
+        }
+        
+        .stage-title {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .stage-description {
+            font-size: 0.95rem;
+            opacity: 0.95;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+        
+        .investigation-scene {
+            height: 120px;
+            border: 2px dashed var(--scene-border);
+            border-radius: 6px;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .status-message {
+            font-size: 0.9rem;
+            font-style: italic;
+            color: var(--status-color);
+            font-weight: 500;
+        }
+        
+        .investigation-progress {
+            height: 10px;
+            background-color: var(--progress-bg);
+            border-radius: 5px;
+            margin: 2rem 0;
+            overflow: hidden;
+        }
+        
+        .investigation-progress .progress-bar {
+            height: 100%;
+            background: var(--primary-gradient);
+            border-radius: 5px;
+            transition: width 0.5s ease;
+            animation: pulse 1.5s infinite;
+        }
+        
+        .investigation-note {
+            font-size: 0.85rem;
+            text-align: center;
+            opacity: 0.85;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+        
+        /* Case Solved Styles */
+        .case-solved {
+            background: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: var(--box-shadow);
+            padding: 2rem;
+            color: var(--text-color);
+            max-width: 800px;
+            margin: 2rem auto;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            border: 1px solid var(--border-color);
+        }
+        
+        .solved-stamp {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            background-color: rgba(var(--accent-rgb), 0.15);
+            color: var(--accent-color);
+            padding: 0.5rem 1rem;
+            font-weight: bold;
+            border: 2px solid rgba(var(--accent-rgb), 0.3);
+            border-radius: 4px;
+            transform: rotate(15deg);
+            font-size: 0.9rem;
+        }
+        
+        .solved-title {
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+        
+        .solved-message {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            opacity: 0.95;
+            color: var(--text-color);
+        }
+        
+        .cases-container {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .stat-box {
+            background-color: var(--form-bg);
+            border-radius: 8px;
+            padding: 1.5rem;
+            min-width: 150px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            border: 1px solid var(--form-border);
+        }
+        
+        .stat-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+        
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        
+        /* Animations */
+        @keyframes pulse {
+            0% {
+                opacity: 0.6;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0.6;
+            }
+        }
+        
+        /* Helper Classes */
+        .hidden {
+            display: none;
+        }
+        
+        /* Add CSS Variables for theme-compatibility */
+        :root {
+            --form-bg: rgba(245, 245, 250, 0.9);
+            --input-bg: rgba(255, 255, 255, 0.95);
+            --label-color: #333;
+            --checkbox-label-color: #333;
+            --text-muted: #555;
+            --check-color: white;
+            --primary-rgb: 0, 120, 231;
+            --accent-rgb: 0, 200, 83;
+            --form-border: rgba(0, 0, 0, 0.12);
+            --section-border: rgba(0, 0, 0, 0.1);
+            --input-border: rgba(0, 0, 0, 0.2);
+            --range-track-bg: rgba(0, 0, 0, 0.15);
+            --range-thumb-border: white;
+            --range-label-color: #444;
+            --scene-border: rgba(0, 0, 0, 0.2);
+            --progress-bg: rgba(0, 0, 0, 0.1);
+            --status-color: #0078e7;
+            --checkbox-bg: white;
+            --checkbox-border: rgba(0, 0, 0, 0.3);
+        }
+        
+        .dark-theme {
+            --form-bg: rgba(16, 24, 48, 0.7);
+            --input-bg: rgba(255, 255, 255, 0.05);
+            --label-color: #e2e2e2;
+            --checkbox-label-color: #e2e2e2;
+            --text-muted: rgba(255, 255, 255, 0.7);
+            --check-color: #16213e;
+            --primary-rgb: 100, 197, 235;
+            --accent-rgb: 94, 252, 130;
+            --form-border: rgba(255, 255, 255, 0.15);
+            --section-border: rgba(255, 255, 255, 0.1);
+            --input-border: rgba(255, 255, 255, 0.2);
+            --range-track-bg: rgba(255, 255, 255, 0.2);
+            --range-thumb-border: #16213e;
+            --range-label-color: rgba(255, 255, 255, 0.8);
+            --scene-border: rgba(255, 255, 255, 0.3);
+            --progress-bg: rgba(255, 255, 255, 0.15);
+            --status-color: #64c5eb;
+            --checkbox-bg: rgba(16, 24, 48, 0.8);
+            --checkbox-border: rgba(255, 255, 255, 0.4);
+        }
+        
+        /* Different dropdown arrow color for dark theme */
+        .dark-theme .form-select {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%2364c5eb' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10l-5 5z'/%3E%3C/svg%3E");
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <a href="index.html" class="logo-link">
+                    <div class="logo-3d-container">
+                        <div class="logo-3d">
+                            <div class="logo-face logo-front"></div>
+                            <div class="logo-face logo-back"></div>
+                            <div class="logo-face logo-right"></div>
+                            <div class="logo-face logo-left"></div>
+                            <div class="logo-face logo-top"></div>
+                            <div class="logo-face logo-bottom"></div>
+                        </div>
+                    </div>
+                    <div class="brand-text">
+                        <h1>RecoverThisFile<span class="tld">.com</span></h1>
+                        <p class="tagline">Enterprise-Grade Digital Resurrection Solution</p>
+                    </div>
+                </a>
+                <div class="header-badges">
+                    <div class="security-badge">
+                        <div class="badge-content">
+                            <span class="badge-icon">🔄</span>
+                            <span>CERTIFIED RECOVERY</span>
+                        </div>
+                    </div>
+                    <div class="security-badge enterprise">
+                        <div class="badge-content">
+                            <span class="badge-icon">⚙️</span>
+                            <span>ENTERPRISE READY</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html" class="active">Recover</a></li>
+                    <li><a href="how-it-works.html">How It Works</a></li>
+                    <li><a href="enterprise-solutions.html">Enterprise</a></li>
+                    <li><a href="comparison.html">Comparison</a></li>
+                    <li><a href="testimonials.html">Testimonials</a></li>
+                    <li><a href="team.html">Our Team</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="main-section">
+            <!-- Case File Form View -->
+            <div id="case-file-form" class="case-file-container">
+                <div class="case-file-header">
+                    <h2 class="case-file-title"><span class="detective-hat">🕵️‍♂️</span>Quantum File Detective</h2>
+                    <p class="case-file-subtitle">Submit a detailed recovery case file for our quantum detectives to investigate. No deletion is too permanent for our forensic recovery algorithms.</p>
+                </div>
+
+                <div class="case-form">
+                    <div class="form-section">
+                        <h3 class="form-section-title"><span class="magnifying-glass">🔍</span>File Identification</h3>
+                        <div class="form-row">
+                            <label class="form-label" for="case-description">Description of Missing Files</label>
+                            <textarea id="case-description" class="form-textarea" placeholder="Describe your missing files in detail (e.g., 'My extremely important quarterly report that I stayed up all night working on')"></textarea>
+                        </div>
+                        
+                        <div class="form-row">
+                            <label class="form-label" for="file-type">File Type</label>
+                            <select id="file-type" class="form-select">
+                                <option value="documents">Documents (Word, PDF, TXT)</option>
+                                <option value="spreadsheets">Spreadsheets (Excel, CSV)</option>
+                                <option value="images">Images (JPG, PNG, RAW)</option>
+                                <option value="videos">Videos (MP4, MOV)</option>
+                                <option value="audio">Audio Files (MP3, WAV)</option>
+                                <option value="databases">Databases (SQL, DB)</option>
+                                <option value="mixed">Multiple File Types</option>
+                                <option value="unknown">Unknown/Can't Remember</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3 class="form-section-title"><span class="magnifying-glass">📍</span>Last Known Location</h3>
+                        <div class="form-row">
+                            <label class="form-label" for="location">Where Were the Files Last Seen?</label>
+                            <select id="location" class="form-select">
+                                <option value="recycle-bin">Recycle Bin (we'll check if it's still there in disguise)</option>
+                                <option value="unknown-folder">That folder I created but can't remember where</option>
+                                <option value="rage-quit">Lost during a rage-quit incident</option>
+                                <option value="shift-delete">Accidentally shift-deleted while cleaning up</option>
+                                <option value="disk-cleanup">Victim of "disk cleanup" overzealousness</option>
+                                <option value="suspicious-button">Disappeared after clicking a suspicious button</option>
+                                <option value="unknown">Completely unknown (our toughest cases)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3 class="form-section-title"><span class="magnifying-glass">⏱️</span>Time of Disappearance</h3>
+                        <div class="form-row">
+                            <label class="form-label" for="time-range">When Did the Files Disappear?</label>
+                            <input type="range" id="time-range" class="range-slider" min="1" max="5" step="1" value="3">
+                            <div class="range-labels">
+                                <span class="range-label">Just now</span>
+                                <span class="range-label">This week</span>
+                                <span class="range-label">Last month</span>
+                                <span class="range-label">Last year</span>
+                                <span class="range-label">Ancient history</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3 class="form-section-title"><span class="magnifying-glass">🔬</span>Circumstantial Evidence</h3>
+                        <div class="form-row">
+                            <div class="checkbox-group">
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="evidence-1" name="evidence">
+                                    <label for="evidence-1" class="checkbox-label">I've already tried regular recovery tools</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="evidence-2" name="evidence">
+                                    <label for="evidence-2" class="checkbox-label">The file was "securely deleted"</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="evidence-3" name="evidence">
+                                    <label for="evidence-3" class="checkbox-label">I've been told it's "gone forever"</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="evidence-4" name="evidence">
+                                    <label for="evidence-4" class="checkbox-label">DeleteThisFile.com was involved</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="evidence-5" name="evidence">
+                                    <label for="evidence-5" class="checkbox-label">Drive was formatted or reinstalled</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="evidence-6" name="evidence">
+                                    <label for="evidence-6" class="checkbox-label">Someone else deleted it</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3 class="form-section-title"><span class="magnifying-glass">🚨</span>Case Priority</h3>
+                        <div class="form-row">
+                            <label class="form-label" for="priority-range">How Urgent Is This Recovery?</label>
+                            <input type="range" id="priority-range" class="range-slider" min="1" max="5" step="1" value="3">
+                            <div class="range-labels">
+                                <span class="range-label">I have time</span>
+                                <span class="range-label">Somewhat urgent</span>
+                                <span class="range-label">Pretty important</span>
+                                <span class="range-label">Very urgent</span>
+                                <span class="range-label">Career depends on it</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="submit-container">
+                        <button id="submit-case" class="submit-button">
+                            <span class="submit-icon">📁</span>Open Investigation
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Investigation Progress View (Hidden Initially) -->
+            <div id="investigation-progress" class="investigation-container hidden">
+                <h2 class="investigation-title">Investigation in Progress...</h2>
+                
+                <div class="investigation-stage" id="stage-desk">
+                    <h3 class="stage-title"><span class="detective-hat">🕵️‍♂️</span>Detective's Desk Phase</h3>
+                    <p class="stage-description">Our quantum detectives are analyzing the case file and gathering initial evidence.</p>
+                    <div class="investigation-scene" id="scene-desk">
+                        <!-- Scene elements will be added via JavaScript -->
+                    </div>
+                    <p class="status-message" id="status-desk">Initializing quantum detective algorithms...</p>
+                </div>
+                
+                <div class="investigation-stage hidden" id="stage-field">
+                    <h3 class="stage-title"><span class="detective-hat">🔍</span>Field Investigation Phase</h3>
+                    <p class="stage-description">Our detectives are combing through your storage sectors to locate deleted file fragments.</p>
+                    <div class="investigation-scene" id="scene-field">
+                        <!-- Scene elements will be added via JavaScript -->
+                    </div>
+                    <p class="status-message" id="status-field"></p>
+                </div>
+                
+                <div class="investigation-stage hidden" id="stage-lab">
+                    <h3 class="stage-title"><span class="detective-hat">🧪</span>Forensic Lab Phase</h3>
+                    <p class="stage-description">Recovered fragments are being analyzed and reassembled in our quantum reconstruction lab.</p>
+                    <div class="investigation-scene" id="scene-lab">
+                        <!-- Scene elements will be added via JavaScript -->
+                    </div>
+                    <p class="status-message" id="status-lab"></p>
+                </div>
+                
+                <div class="investigation-progress">
+                    <div class="progress-bar" style="width: 0%"></div>
+                </div>
+                
+                <p class="investigation-note">Our quantum detectives are working diligently on your case. Complex investigations may take more time.</p>
+            </div>
+
+            <!-- Case Solved View (Hidden Initially) -->
+            <div id="case-solved" class="case-solved hidden">
+                <div class="solved-stamp">CASE SOLVED</div>
+                <h2 class="solved-title">Recovery Successful!</h2>
+                <p class="solved-message">Our quantum detectives have successfully recovered your files with 99.97% data integrity. Even DeleteThisFile's best efforts couldn't hide your data from our forensic recovery algorithms.</p>
+                
+                <div id="solved-stats" class="cases-container">
+                    <div class="stat-box">
+                        <div class="stat-icon">📊</div>
+                        <div class="stat-label">Files Recovered</div>
+                        <div class="stat-value"><span id="files-recovered">5</span></div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-icon">⚡</div>
+                        <div class="stat-label">Recovery Rate</div>
+                        <div class="stat-value"><span>99.97%</span></div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-icon">✨</div>
+                        <div class="stat-label">Recovery Score</div>
+                        <div class="stat-value"><span id="recovery-points">250</span></div>
+                    </div>
+                </div>
+                
+                <div class="submit-container">
+                    <button id="new-case" class="submit-button">
+                        <span class="submit-icon">📁</span>Open New Case
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Achievement popup -->
+            <div id="achievement-popup" class="achievement-popup hidden">
+                <div class="achievement-content">
+                    <div class="achievement-icon">🏆</div>
+                    <div class="achievement-text">
+                        <h3>Achievement Unlocked!</h3>
+                        <p id="achievement-name">Digital Detective</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="stats">
+            <div class="stat-box">
+                <div class="stat-icon">📊</div>
+                <div class="stat-label">Session Recoveries</div>
+                <div class="stat-value"><span id="recovered-count">0</span></div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-icon">🌐</div>
+                <div class="stat-label">Global Recoveries</div>
+                <div class="stat-value"><span id="total-count">0</span></div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-icon">✨</div>
+                <div class="stat-label">Recovery Score</div>
+                <div class="stat-value"><span id="recovery-points">0</span></div>
+            </div>
+        </div>
+
+        <div id="achievement-section" class="achievement-section">
+            <h3>Your Achievements</h3>
+            <div class="achievement-grid">
+                <div class="achievement-card locked" data-achievement="first-recovery">
+                    <span class="tooltip">How to unlock: Recover your first file using our secure recovery system</span>
+                    <div class="achievement-card-icon">🔄</div>
+                    <div class="achievement-card-title">Digital Archaeologist</div>
+                </div>
+                <div class="achievement-card locked" data-achievement="bulk-recovery">
+                    <span class="tooltip">How to unlock: Recover 5 or more files at once to earn this achievement</span>
+                    <div class="achievement-card-icon">📦</div>
+                    <div class="achievement-card-title">Mass Savior</div>
+                </div>
+                <div class="achievement-card locked" data-achievement="time-traveler">
+                    <span class="tooltip">How to unlock: Recover files deleted over 30 days ago to earn this achievement</span>
+                    <div class="achievement-card-icon">⏰</div>
+                    <div class="achievement-card-title">Time Traveler</div>
+                </div>
+                <div class="achievement-card locked" data-achievement="data-necromancer">
+                    <span class="tooltip">How to unlock: Recover 10 or more files in a single session</span>
+                    <div class="achievement-card-icon">🧠</div>
+                    <div class="achievement-card-title">Data Necromancer</div>
+                </div>
+                <div class="achievement-card locked" data-achievement="recovery-hero">
+                    <span class="tooltip">How to unlock: Reach 1000 recovery points through file restorations</span>
+                    <div class="achievement-card-icon">🛡️</div>
+                    <div class="achievement-card-title">Recovery Hero</div>
+                </div>
+                <div class="achievement-card locked" data-achievement="phoenix-master">
+                    <span class="tooltip">How to unlock: Complete multiple recovery sessions</span>
+                    <div class="achievement-card-icon">🔥</div>
+                    <div class="achievement-card-title">Phoenix Master</div>
+                </div>
+            </div>
+        </div>
+
+        <section class="features">
+            <div class="feature">
+                <div class="feature-icon">🧩</div>
+                <h3>Quantum Reconstruction</h3>
+                <p>Industry-leading recovery algorithms</p>
+                <div class="feature-divider"></div>
+                <div class="feature-detail">45-layer forensics</div>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">⚡</div>
+                <h3>High-Performance</h3>
+                <p>Optimized for enterprise workloads</p>
+                <div class="feature-divider"></div>
+                <div class="feature-detail">500+ GB/hour</div>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🔍</div>
+                <h3>Unbelievable Success Rate</h3>
+                <p>Recover what others can't</p>
+                <div class="feature-divider"></div>
+                <div class="feature-detail">99.97% guaranteed</div>
+            </div>
+        </section>
+
+        <section class="enterprise-callout">
+            <div class="callout-content">
+                <h3>Enterprise Solutions Available</h3>
+                <p>Custom deployment options for government and corporate environments</p>
+                <a href="enterprise-solutions.html" class="enterprise-badge">Enterprise</a>
+            </div>
+        </section>
+
+        <!-- Confetti canvas for celebrations -->
+        <canvas id="confetti-canvas" class="confetti-canvas"></canvas>
+
+        <footer>
+            <!-- Footer content will be injected by footer.js -->
+        </footer>
+    </div>
+
+    <!-- Theme toggle button -->
+    <button id="theme-switch" aria-label="Toggle dark/light mode">🌓</button>
+
+    <script src="js/script.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/footer.js"></script>
+</body>
+</html> 
